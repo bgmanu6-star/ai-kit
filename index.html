@@ -17,6 +17,9 @@
 var PAY_LINK = "https://topmate.io/tamilaiacademy/2394097";  // Topmate product link
 var PIXEL_ID = "";                                  // Meta Pixel ID (எண்கள் மட்டும்)
 var EMAIL    = "tamilaiacademy@gmail.com";                 // உதவிக்கான Email
+var BUNDLE_LINK  = "https://topmate.io/tamilaiacademy/2396032";   // Pro Bundle ₹299 – Topmate link (காலியாக இருந்தால் Pro பகுதி மறைந்திருக்கும்)
+var SHORTS_LINK  = "https://topmate.io/tamilaiacademy/2395799";   // 300 Shorts Scripts ₹99 – Topmate link
+var POSTERS_LINK = "https://topmate.io/tamilaiacademy/2396016";   // 100 Shop Posters ₹149 – Topmate link
 /* ============================================================ */
 if (PIXEL_ID) {
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -70,6 +73,19 @@ a{color:var(--red)}
 .price .pay span{border:1px solid var(--line);border-radius:6px;padding:2px 8px}
 .freebtn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;margin-top:12px;border:2px dashed var(--green);border-radius:12px;color:var(--green);font-weight:800;text-decoration:none;font-size:15px;padding:8px 12px}
 .freebtn:hover{background:#EAF7EE}
+.pro{background:#FFF8D6;padding:44px 0}
+.pro h2{text-align:center;font-size:32px;color:var(--navy)}
+.pro .sec-sub{text-align:center;color:var(--muted);margin:6px auto 22px;max-width:640px}
+.pro .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pro .c{background:#fff;border:2px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.pro .c.best{border:4px solid var(--red);position:relative}
+.pro .c.best:before{content:"சிறந்த மதிப்பு";position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-weight:800;font-size:14px;padding:3px 14px;border-radius:999px;white-space:nowrap}
+.pro .c h3{font-size:22px;color:var(--navy);line-height:1.25}
+.pro .c ul{margin:0;padding-left:20px;font-size:15px;line-height:1.6;flex:1}
+.pro .c .pr{font-family:'Baloo Thambi 2',sans-serif;font-weight:800;font-size:42px;color:var(--red);line-height:1}
+.pro .c .pr s{font-size:20px;color:#8A90A2}
+.pro .c .btn{width:100%;font-size:19px;min-height:52px;text-align:center;white-space:nowrap}
+@media (max-width:760px){.pro .cards{grid-template-columns:1fr}}
 .sample{background:var(--navy);color:#fff}
 .sample .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
 .sample h2{font-size:30px;color:var(--yellow)}
@@ -257,6 +273,33 @@ footer nav{display:flex;flex-wrap:wrap;gap:16px}
   </div>
 </section>
 
+<section class="pro" id="pro" style="display:none">
+  <div class="wrap">
+    <h2>இன்னும் வேகமாகத் தொடங்க – கூடுதல் Packs</h2>
+    <p class="sec-sub">Kit கற்றுத் தருகிறது. இந்த Packs உடனே பயன்படுத்தக்கூடிய Ready Content தருகின்றன.</p>
+    <div class="cards">
+      <div class="c" data-k="shorts">
+        <h3>🎬 300 Ready தமிழ் Shorts Scripts</h3>
+        <ul><li>10 Niches × 30 Scripts</li><li>ஒவ்வொன்றுக்கும் Hook, 3 Points, Ending, காட்சி Idea</li><li>Niche வாரியான Hashtags</li><li>300 நாள் தினமும் Post செய்ய போதுமானது</li></ul>
+        <div class="pr">₹99</div>
+        <a class="btn js-shorts" href="#" rel="noopener">இப்போதே பெறுங்கள்</a>
+      </div>
+      <div class="c best" data-k="bundle">
+        <h3>⭐ Pro Bundle – அனைத்தும் ஒன்றாக</h3>
+        <ul><li>12 தமிழ் E-Books + 500+ Prompts</li><li>+ 300 Shorts Scripts</li><li>+ 100 கடை Poster Templates</li><li>தனித்தனியாக வாங்கினால் ₹347</li></ul>
+        <div class="pr">₹299 <s>₹347</s></div>
+        <a class="btn js-bundle" href="#" rel="noopener">Pro Bundle பெறுங்கள்</a>
+      </div>
+      <div class="c" data-k="posters">
+        <h3>🏪 100 கடை Poster Templates</h3>
+        <ul><li>10 வகை கடைகள் × 10 நிகழ்வுகள்</li><li>திறப்பு விழா, தள்ளுபடி, பொங்கல், தீபாவளி, ரம்ஜான், கிறிஸ்துமஸ்…</li><li>Canva-வில் Edit செய்யலாம்</li><li>உள்ளூர் கடைகளுக்கு செய்து கொடுக்கலாம் (E-Book 9)</li></ul>
+        <div class="pr">₹149</div>
+        <a class="btn js-posters" href="#" rel="noopener">இப்போதே பெறுங்கள்</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sample" id="free">
   <div class="wrap">
     <div>
@@ -393,6 +436,16 @@ var OFFER_END = new Date('2026-11-30T23:59:59+05:30').getTime();
   cds.forEach(function(e){ e.querySelector('.d').textContent=d; e.querySelector('.h').textContent=p(h); e.querySelector('.m').textContent=p(m); e.querySelector('.s').textContent=p(s); });
   sh.forEach(function(e){ e.textContent = d>0 ? d+' நாள் மீதம்' : p(h)+':'+p(m)+':'+p(s)+' மீதம்'; });
   setTimeout(tick, 1000);
+})();
+
+(function(){
+  var map={shorts:SHORTS_LINK,bundle:BUNDLE_LINK,posters:POSTERS_LINK}, any=false;
+  document.querySelectorAll('#pro .c').forEach(function(c){
+    var l=map[c.dataset.k]; if(!l){c.style.display='none';return;} any=true;
+    var a=c.querySelector('.btn'); a.href=l;
+    a.addEventListener('click',function(){ if(window.fbq) fbq('track','InitiateCheckout',{content_name:c.dataset.k}); });
+  });
+  if(any) document.getElementById('pro').style.display='';
 })();
 document.getElementById('yr').textContent = new Date().getFullYear();
 document.querySelectorAll('.js-buy').forEach(function(a){
